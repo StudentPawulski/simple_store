@@ -1,6 +1,19 @@
 <h1>Products</h1>
+  <p>
+    <strong>Total number of products: </strong>
+    <%= @count %>
+  </p>
+    <p>
+    <strong>Average price of products: </strong>
+    <%= number_to_currency(@average) %>
+  </p>
+    <p>
+    <strong>Total quantity of sock: </strong>
+    <%= @sum %>
+  </p>
+<h2>List of products</h2>
 <% @products.each do |product| %>
-  <h2>Product name: <%= product.title.humanize %></h2>
+  <h3>Product name: <%= product.title.humanize %></h2>
   <p>
     <strong>Description: </strong>
     <%= product.description.humanize %>
