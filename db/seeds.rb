@@ -7,3 +7,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# puts Faker::Types.rb_string
+
+# 676.times do
+#  Product.create(title: Faker::Types.rb_string,
+#                 description: Faker::Company.bs,
+#                 price: Faker::Number.between(from: 0.01, to: 9999.99),
+#                 stock_quantity: Faker::Number.between(from: 1, to: 99))
+# end
+# puts Product.count
