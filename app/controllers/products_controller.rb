@@ -6,5 +6,6 @@ class ProductsController < ApplicationController
     @count = Product.count
     @average = Product.average(:price)
     @sum = Product.sum(:stock_quantity)
+    @category = Category.all
   end
 end

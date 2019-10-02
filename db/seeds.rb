@@ -17,3 +17,21 @@
 #                 stock_quantity: Faker::Number.between(from: 1, to: 99))
 # end
 # puts Product.count
+
+Product.destroy_all
+Category.destroy_all
+
+csv_file = Rails.root + 'db/products.csv'
+
+products = SmarterCSV.process(csv_file)
+
+products.each do |product|
+  category = Category.find_or_create_by(name: product[:category])
+  Product.create(title: product[:name],
+                 price: product[:price],
+                 description: product[:description],
+                 stock_quantity: product[:stock_quantity],
+                 category_id: category[:id])
+end
+
+# Category.destroy_all

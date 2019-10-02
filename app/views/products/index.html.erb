@@ -14,6 +14,11 @@
 <h2>List of products</h2>
 <% @products.each do |product| %>
   <h3>Product name: <%= product.title.humanize %></h2>
+    </p>
+    <p>
+    <strong>Category: </strong>
+    <%= product.category.name %>
+  </p>
   <p>
     <strong>Description: </strong>
     <%= product.description.humanize %>
